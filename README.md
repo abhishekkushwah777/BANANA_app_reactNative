@@ -1,6 +1,6 @@
-# 🍌BANANA - Real-Time Chat WebApp
+# 🍌BANANA - Application_(React Native)
 
-A full-stack **real-time chat application** built with **React.js, Node.js, Express.js, MongoDB, and Socket.IO**.
+A full-stack **real-time chat application** built with **React Native, Node.js, Express.js, MongoDB, and Socket.IO**.
 
 The application supports user authentication, private conversations, persistent message storage, and real-time message delivery using WebSockets.
 
@@ -51,21 +51,21 @@ The application supports user authentication, private conversations, persistent 
 ## UI Design
 ### Login UI
 
-<image src = "./UI/welcome.png">
-<image src = "./UI/login.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/welcome.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/login.png">
  
 ### Registration
  
-<image src = "./UI/register_1.png">
-<image src = "./UI/register_2.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/register1.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/register2.png">
  
 ### In app screens
 
-<image src = "./UI/homescreen.png">
-<image src = "./UI/chatscreen.png">
-<image src = "./UI/notification.png">
-<image src = "./UI/addfriends.png">
-<image src = "./UI/myprofile.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/homescreen.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/chatscreen.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/notification.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/addfriends.png">
+<image src = "https://github.com/abhishekkushwah777/BANANA_chat_webapp/blob/3968b0772f961f07c366d2e68dae29c33ad7a136/UI/myprofile.png">
  
 ---
 
