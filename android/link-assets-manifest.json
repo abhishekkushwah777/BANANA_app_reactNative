@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/kumbh-sans(1).ttf",
+      "sha1": "4d76f13bc3fb9cd7600817a1d2380d7752732ccf"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(2).ttf",
+      "sha1": "d9d6e4296faa079b8631e8deaea0412b5b5c98d5"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(3).ttf",
+      "sha1": "e4cf13677b68f1c3b16f99b443c38c4f86d8cdbd"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(4).ttf",
+      "sha1": "907dc20eebef882d435745be2407bc732a4ee554"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(5).ttf",
+      "sha1": "84eeb36a482f5db04df690234806a043aa0c5aa6"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(6).ttf",
+      "sha1": "e19dfc79a2b55cabf17902c122d04586ebbe769b"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(7).ttf",
+      "sha1": "418e6d6019fad2f3299dda08de47bd15c81c528d"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(8).ttf",
+      "sha1": "5f00a5f8ba092f9f1b9ddd643e7410cd77467f25"
+    },
+    {
+      "path": "src/assets/fonts/kumbh-sans(9).ttf",
+      "sha1": "dc963773fac3babe3258622e6aa5871e55e22d89"
+    }
+  ]
+}

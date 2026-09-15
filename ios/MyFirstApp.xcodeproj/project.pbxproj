@@ -11,6 +11,15 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BAD0BC982F8B41ADA71A6DFF /* kumbh-sans(1).ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A1162C9F9D40979F07CC42 /* kumbh-sans(1).ttf */; };
+		200FA67499DF4C2A8F89158D /* kumbh-sans(2).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D59B49FAAFF43EA88AACB5F /* kumbh-sans(2).ttf */; };
+		5D5E8EC27325449EB2A050F8 /* kumbh-sans(3).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0D24BF2A044191AC3C37E6 /* kumbh-sans(3).ttf */; };
+		32875DB8457843F1ADF48779 /* kumbh-sans(4).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50114F9F410A449183DE74B1 /* kumbh-sans(4).ttf */; };
+		5AAB80EB7D1549288C242D38 /* kumbh-sans(5).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97331C94D73A4A49B8D1FFD6 /* kumbh-sans(5).ttf */; };
+		3DF00C2B18EF42E884D3DAEF /* kumbh-sans(6).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93CF46F8D4E648829C86911D /* kumbh-sans(6).ttf */; };
+		E3BAB540FAFD4B3F8B500AB6 /* kumbh-sans(7).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FFFC4EB3C3A4DABA05750BA /* kumbh-sans(7).ttf */; };
+		082E866114A74EF583B4B1B5 /* kumbh-sans(8).ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF80CBE407734814A5B06E73 /* kumbh-sans(8).ttf */; };
+		064178C17AD042CF8A6063F2 /* kumbh-sans(9).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3931070545714866AA0EDA34 /* kumbh-sans(9).ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MyFirstApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyFirstApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D0A1162C9F9D40979F07CC42 /* kumbh-sans(1).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(1).ttf"; path = "../src/assets/fonts/kumbh-sans(1).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D59B49FAAFF43EA88AACB5F /* kumbh-sans(2).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(2).ttf"; path = "../src/assets/fonts/kumbh-sans(2).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C0D24BF2A044191AC3C37E6 /* kumbh-sans(3).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(3).ttf"; path = "../src/assets/fonts/kumbh-sans(3).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		50114F9F410A449183DE74B1 /* kumbh-sans(4).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(4).ttf"; path = "../src/assets/fonts/kumbh-sans(4).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97331C94D73A4A49B8D1FFD6 /* kumbh-sans(5).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(5).ttf"; path = "../src/assets/fonts/kumbh-sans(5).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93CF46F8D4E648829C86911D /* kumbh-sans(6).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(6).ttf"; path = "../src/assets/fonts/kumbh-sans(6).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3FFFC4EB3C3A4DABA05750BA /* kumbh-sans(7).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(7).ttf"; path = "../src/assets/fonts/kumbh-sans(7).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF80CBE407734814A5B06E73 /* kumbh-sans(8).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(8).ttf"; path = "../src/assets/fonts/kumbh-sans(8).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3931070545714866AA0EDA34 /* kumbh-sans(9).ttf */ = {isa = PBXFileReference; name = "kumbh-sans(9).ttf"; path = "../src/assets/fonts/kumbh-sans(9).ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				3B4EFD0E7E164673B30CB45E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +115,23 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		3B4EFD0E7E164673B30CB45E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D0A1162C9F9D40979F07CC42 /* kumbh-sans(1).ttf */,
+				7D59B49FAAFF43EA88AACB5F /* kumbh-sans(2).ttf */,
+				6C0D24BF2A044191AC3C37E6 /* kumbh-sans(3).ttf */,
+				50114F9F410A449183DE74B1 /* kumbh-sans(4).ttf */,
+				97331C94D73A4A49B8D1FFD6 /* kumbh-sans(5).ttf */,
+				93CF46F8D4E648829C86911D /* kumbh-sans(6).ttf */,
+				3FFFC4EB3C3A4DABA05750BA /* kumbh-sans(7).ttf */,
+				BF80CBE407734814A5B06E73 /* kumbh-sans(8).ttf */,
+				3931070545714866AA0EDA34 /* kumbh-sans(9).ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +195,15 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				BAD0BC982F8B41ADA71A6DFF /* kumbh-sans(1).ttf in Resources */,
+				200FA67499DF4C2A8F89158D /* kumbh-sans(2).ttf in Resources */,
+				5D5E8EC27325449EB2A050F8 /* kumbh-sans(3).ttf in Resources */,
+				32875DB8457843F1ADF48779 /* kumbh-sans(4).ttf in Resources */,
+				5AAB80EB7D1549288C242D38 /* kumbh-sans(5).ttf in Resources */,
+				3DF00C2B18EF42E884D3DAEF /* kumbh-sans(6).ttf in Resources */,
+				E3BAB540FAFD4B3F8B500AB6 /* kumbh-sans(7).ttf in Resources */,
+				082E866114A74EF583B4B1B5 /* kumbh-sans(8).ttf in Resources */,
+				064178C17AD042CF8A6063F2 /* kumbh-sans(9).ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
