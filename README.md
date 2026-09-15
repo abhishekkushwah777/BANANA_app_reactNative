@@ -1,97 +1,559 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🍌BANANA - Real-Time Chat WebApp
 
-# Getting Started
+A full-stack **real-time chat application** built with **React.js, Node.js, Express.js, MongoDB, and Socket.IO**.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+The application supports user authentication, private conversations, persistent message storage, and real-time message delivery using WebSockets.
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+* 🔐 **User Authentication**
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+  * User registration and login
+  * JWT-based authentication
+  * Protected API routes
+  * Authenticated Socket.IO connections
 
-```sh
-# Using npm
-npm start
+* 💬 **Real-Time Messaging**
 
-# OR using Yarn
-yarn start
+  * Send and receive messages instantly
+  * Socket.IO-based real-time communication
+  * Conversation-specific Socket.IO rooms
+  * Messages are broadcast to all participants in the conversation
+
+* 👥 **Private Conversations**
+
+  * One-to-one conversations between users
+  * Automatically find or create existing private conversations
+  * Conversation access is verified on the backend
+
+* 💾 **Persistent Messages**
+
+  * Messages are stored in MongoDB
+  * Previous messages are loaded when opening a conversation
+  * Messages include sender information and timestamps
+
+* 🔒 **Security**
+
+  * JWT authentication for REST APIs
+  * JWT authentication during Socket.IO handshake
+  * Backend verifies conversation membership before allowing access
+  * Environment variables for sensitive configuration
+
+* ⚡ **React Frontend**
+
+  * Component-based architecture
+  * React Context for shared socket connection
+  * Dynamic conversation loading
+  * Real-time UI updates when new messages arrive
+
+---
+
+## UI Design
+### Login UI
+
+<image src = "./UI/welcome.png">
+<image src = "./UI/login.png">
+ 
+### Registration
+ 
+<image src = "./UI/register_1.png">
+<image src = "./UI/register_2.png">
+ 
+### In app screens
+
+<image src = "./UI/homescreen.png">
+<image src = "./UI/chatscreen.png">
+<image src = "./UI/notification.png">
+<image src = "./UI/addfriends.png">
+<image src = "./UI/myprofile.png">
+ 
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* JavaScript
+* Vite
+* CSS
+* Socket.IO Client
+* Fetch API
+
+### Backend
+
+* Node.js
+* Express.js
+* Socket.IO
+* JWT
+* Mongoose
+
+### Database
+
+* MongoDB
+
+---
+
+## 🏗️ Architecture
+
+The application uses both **REST APIs** and **Socket.IO**.
+
+```text
+                    ┌──────────────────┐
+                    │   React Client   │
+                    └────────┬─────────┘
+                             │
+                ┌────────────┴────────────┐
+                │                         │
+             REST API                Socket.IO
+                │                         │
+                ▼                         ▼
+        ┌───────────────┐        ┌────────────────┐
+        │ Express Server│        │ Socket.IO      │
+        │               │        │ Server         │
+        └───────┬───────┘        └────────┬───────┘
+                │                         │
+                └────────────┬────────────┘
+                             ▼
+                    ┌─────────────────┐
+                    │     MongoDB     │
+                    │                 │
+                    │ Users           │
+                    │ Conversations   │
+                    │ Messages        │
+                    └─────────────────┘
 ```
 
-## Step 2: Build and run your app
+### How messaging works
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```text
+User opens conversation
+        │
+        ▼
+REST API fetches conversation
+        │
+        ▼
+REST API fetches previous messages
+        │
+        ▼
+React receives conversation ID
+        │
+        ▼
+Socket.IO connection
+        │
+        ▼
+join_conversation
+        │
+        ▼
+conversation:<conversationId>
+        │
+        ▼
+User sends message
+        │
+        ▼
+send_message
+        │
+        ▼
+Backend validates participant
+        │
+        ▼
+Message saved to MongoDB
+        │
+        ▼
+receive_message
+        │
+        ▼
+All users in conversation receive message
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 📁 Project Structure
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```text
+chatApp/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── api/
+│   │   │   ├── auth.js
+│   │   │   └── conversation.js
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Chat.jsx
+│   │   │   ├── MessageList.jsx
+│   │   │   └── ...
+│   │   │
+│   │   ├── context/
+│   │   │   └── SocketContext.jsx
+│   │   │
+│   │   ├── socket/
+│   │   │   └── socket.js
+│   │   │
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   └── package.json
+│
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Conversation.js
+│   │   └── Message.js
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── conversationRoutes.js
+│   │
+│   ├── socket/
+│   │   └── socketHandler.js
+│   │
+│   ├── utils/
+│   │   └── generateToken.js
+│   │
+│   ├── server.js
+│   ├── .env
+│   └── package.json
+│
+├── .gitignore
+└── README.md
 ```
 
-Then, and every time you update your native dependencies, run:
+> The exact structure may vary depending on the current implementation.
 
-```sh
-bundle exec pod install
+---
+
+## 🔌 Socket.IO Communication
+
+The application uses Socket.IO rooms to isolate conversations.
+
+When a user opens a conversation:
+
+```javascript
+socket.emit("join_conversation", {
+  conversationId,
+});
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+The server places the socket into:
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```text
+conversation:<conversationId>
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+For example:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```text
+conversation:6a944fbfd0178f9282dc62aa
+```
 
-## Step 3: Modify your app
+When a message is sent:
 
-Now that you have successfully run the app, let's make changes!
+```javascript
+socket.emit("send_message", {
+  conversationId,
+  content,
+});
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+The server:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+1. Verifies the JWT
+2. Identifies the authenticated user
+3. Checks conversation membership
+4. Saves the message to MongoDB
+5. Populates sender information
+6. Emits the message to the conversation room
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```javascript
+io.to(`conversation:${conversationId}`)
+  .emit("receive_message", message);
+```
 
-## Congratulations! :tada:
+---
 
-You've successfully run and modified your React Native App. :partying_face:
+## 🔐 Authentication Flow
 
-### Now what?
+JWT is used for both HTTP API authentication and Socket.IO authentication.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### REST API
 
-# Troubleshooting
+The frontend sends:
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+```http
+Authorization: Bearer <JWT>
+```
 
-# Learn More
+### Socket.IO
 
-To learn more about React Native, take a look at the following resources:
+The JWT is sent during the Socket.IO handshake:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```javascript
+const socket = io("http://localhost:5000", {
+  auth: {
+    token,
+  },
+});
+```
+
+The backend retrieves it with:
+
+```javascript
+const token = socket.handshake.auth.token;
+```
+
+and verifies it:
+
+```javascript
+const decoded = jwt.verify(
+  token,
+  process.env.JWT_SECRET
+);
+```
+
+The authenticated user is then available through:
+
+```javascript
+socket.user
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd chatApp
+```
+
+### 2. Install backend dependencies
+
+```bash
+cd backend
+npm install
+```
+
+### 3. Install frontend dependencies
+
+```bash
+cd ../frontend
+npm install
+```
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file inside the `backend` directory:
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Do **not** commit your `.env` file.
+
+Your `.gitignore` should contain:
+
+```gitignore
+.env
+node_modules/
+dist/
+```
+
+---
+
+## ▶️ Running the Application
+
+### Start the backend
+
+```bash
+cd backend
+node server.js
+```
+
+The server should run on:
+
+```text
+http://localhost:5000
+```
+
+### Start the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm run dev
+```
+
+The Vite development server will normally run on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 📡 Example Socket Events
+
+### Join conversation
+
+Client:
+
+```javascript
+socket.emit("join_conversation", {
+  conversationId,
+});
+```
+
+Server:
+
+```javascript
+socket.join(
+  `conversation:${conversationId}`
+);
+```
+
+### Send message
+
+Client:
+
+```javascript
+socket.emit("send_message", {
+  conversationId,
+  content: "Hello!",
+});
+```
+
+### Receive message
+
+Client:
+
+```javascript
+socket.on(
+  "receive_message",
+  (message) => {
+    setMessages((previousMessages) => [
+      ...previousMessages,
+      message,
+    ]);
+  }
+);
+```
+
+### Leave conversation
+
+Client:
+
+```javascript
+socket.emit("leave_conversation", {
+  conversationId,
+});
+```
+
+---
+
+## 🗄️ Database Models
+
+### User
+
+Stores information such as:
+
+```text
+_id
+username
+email
+password
+avatar
+status
+```
+
+### Conversation
+
+Stores:
+
+```text
+_id
+type
+participants
+createdAt
+updatedAt
+```
+
+### Message
+
+Stores:
+
+```text
+_id
+conversationId
+senderId
+content
+createdAt
+```
+
+This allows messages to remain persistent even after a user disconnects from Socket.IO.
+
+---
+
+## 🧠 Key Concepts Demonstrated
+
+This project was built to understand and implement:
+
+* REST API development
+* JWT authentication
+* Protected routes
+* MongoDB and Mongoose
+* React state management
+* React Context API
+* WebSocket communication
+* Socket.IO rooms
+* Real-time event handling
+* Persistent chat messages
+* Client/server communication
+* Authentication during WebSocket handshake
+* Conversation-based authorization
+
+---
+
+## 🔮 Future Improvements
+
+Potential features planned for future versions:
+
+* 👤 Online/offline user status
+* ✍️ Typing indicators
+* ✓ Message delivery/read status
+* 🗑️ Delete messages
+* ✏️ Edit messages
+* 📎 File and image sharing
+* 🔔 Notifications
+* 🔎 Message search
+* 👥 Group conversations
+* 🟢 Last seen
+* 📱 Responsive/mobile UI
+* 🔄 Message pagination
+* 🚀 Production deployment
+* ☁️ Cloud file storage
+
+---
+
+## 👨‍💻 Author
+
+**Abhishek Kushwah**
+
+B.Tech — Artificial Intelligence & Machine Learning
+
+This project was developed as a practical project to understand **real-time communication, WebSockets, backend authentication, and full-stack application architecture**.
+
+---
+
+## 📄 License
+
+This project is available for educational and personal use.
