@@ -48,6 +48,10 @@ The application supports user authentication, private conversations, persistent 
 
 ---
 
+#Downloads
+
+Beta_v0.1 - https://github.com/abhishekkushwah777/BANANA_app_reactNative/releases/tag/Beta_v0.1
+
 ## UI Design
 ### Login UI
 
